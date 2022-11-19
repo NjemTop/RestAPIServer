@@ -2,6 +2,6 @@ FROM golang:latest
 
 COPY ./ ./
 
-RUN go build -o main .
+EXPOSE 8055
 
-CMD ["./main"]
+CMD [ "go", "run main.go"]
