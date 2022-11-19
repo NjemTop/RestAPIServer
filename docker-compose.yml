@@ -1,13 +1,7 @@
 version: '3'
 
 services:
-  service:
-    hostname: RestAPIServer
-    container_name: RestAPIServer
-    image: RestAPIServer:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    restart: always
+  rest-api:
+    image: ${APP_NAME}
     ports:
       - "8055:8055"
