@@ -1,15 +1,7 @@
-# --- Stage 1:
-FROM golang:1.19-alpine as builder
-# Args & ENVs
-ENV BUILD_PATH=/go/src/github.com/NjemTop/automatic_email
+FROM golang:latest
 
-# COPY local files
-WORKDIR /app
-COPY . .
+COPY ./ ./
 
-# Get go dependencies
-RUN go mod download
+RUN go build -o main .
 
-RUN go run .
-
-EXPOSE 8055
+CMD ["./main"]
